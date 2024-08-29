@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de MiltonMand</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>MiltonMand</h1>
+        <p>Desenvolvedor Web | Criador de Soluções Inovadoras</p>
+        <div id="hamburger" class="hamburger">
+            &#9776; <!-- Ícone de Menu -->
+        </div>
+        <div id="menu" class="menu">
+            <a href="#header">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+            <a href="controle.html" id="rastreamento">Seu Projeto</a>
+            <span id="close" class="close">&times;</span> <!-- Ícone de Fechar -->
+        </div>
+    </header>
+
+    <nav>
+        <a href="#header">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#projects">Projetos</a>
+        <a href="#contact">Contato</a>
+        <a href="controle.html" id="rastreamento">Seu Projeto</a>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="home">
+            <h2>Bem-vindo ao Meu Portfólio</h2>
+            <p>Transformando Ideias em Realidade com Código</p>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Sobre Mim</h2>
+            <p>Sou MiltonMand, um desenvolvedor web apaixonado por criar experiências digitais incríveis. Com
+                experiência em HTML, CSS, JavaScript, e outras tecnologias, estou sempre em busca de novos desafios para
+                melhorar minhas habilidades e oferecer o melhor para meus clientes.</p>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Meus Projetos</h2>
+            <div class="projects">
+                <div class="card">
+                    <div><img src="/images/projeto1.png" alt="Projeto 1"></div>
+                    <div class="descricacao">
+                        <h3>Projeto 1: Site de E-commerce</h3>
+                        <p>Desenvolvimento de uma plataforma de e-commerce com integração de pagamento e carrinho de
+                            compras.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img src="/images/projeto2.png" alt="Projeto 2"></div>
+                    <div class="descricacao">
+                        <h3>Projeto 2: Blog Pessoal</h3>
+                        <p>Criação de um blog pessoal com sistema de gerenciamento de conteúdo (CMS) completo.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img src="/images/projeto3.png" alt="Projeto 3"></div>
+                    <div class="descricacao">
+                        <h3>Projeto 3: Jogo Educativo</h3>
+                        <p>Desenvolvimento de um jogo educativo interativo para ensinar programação a iniciantes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img src="/images/projeto4.png" alt="Portfólio 1"></div>
+                    <div class="descricacao">
+                        <h3>Site de Fotografia</h3>
+                        <p>Desenvolvimento de um site para portfólio de fotografia com galerias dinâmicas e responsivas.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img src="/images/projeto6.png" alt="Portfólio 2"></div>
+                    <div class="descricacao">
+                        <h3>Aplicativo Web</h3>
+                        <p>Criação de um aplicativo web para gerenciamento de tarefas com interface intuitiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <form>
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MiltonMand. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">F</a>
+            <a href="#" aria-label="Twitter">T</a>
+            <a href="#" aria-label="LinkedIn">L</a>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const closeBtn = document.getElementById('close');
+    
+        // Abre o menu ao clicar no ícone de hambúrguer
+        hamburger.addEventListener('click', () => {
+            menu.style.display = 'flex';
+        });
+    
+        // Fecha o menu ao clicar no ícone de "X"
+        closeBtn.addEventListener('click', () => {
+            menu.style.display = 'none';
+        });
+    </script>    
+</body>

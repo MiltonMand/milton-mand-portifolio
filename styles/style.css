@@ -1,0 +1,346 @@
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #32116a05;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos para o menu hambúrguer */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffffb9;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #0093E0;
+    padding: 100px 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.menu a {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu a:hover {
+    background-color: #04276e2f;
+    transform: scale(1.05);
+}
+
+.close {
+    display: block;
+    font-size: 50px;
+    cursor: pointer;
+    color: #ffffffcd;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+}
+
+.close:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #262AE0, #0039AB);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #0093E0;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 10px 20px;
+    margin: 0 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    transition: .1s;
+}
+
+nav a:hover {
+    background-color: #04276e2f;
+    transform: scale(1.05);
+}
+
+nav #rastreamento {
+    background-color: #8F00E0;
+}
+
+/* Container Principal */
+.container {
+    /* max-width: 1200px;*/
+    margin: 0 auto;
+}
+
+/* Estilos da Home */
+.home {
+    text-align: center;
+    padding: 150px 20px;
+    background: url('/images/showcase.jpg') no-repeat center center/cover;
+    color: white;
+    margin-top: 0;
+}
+
+.home h2 {
+    font-size: 3em;
+}
+
+.home p {
+    font-size: 1.5em;
+}
+
+.about {
+    padding: 2%;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+/* Seções */
+section {
+    margin: 50px 0;
+}
+
+.projects {
+    background-color: #8F00E0;
+}
+
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.projects {
+    display: grid;
+    gap: 20px;
+    padding: 2%;
+}
+
+/* Responsividade das colunas */
+@media (min-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 750px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+}
+
+@media (max-width: 750px)  {
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 4%;
+    }
+
+    .card {
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    nav {
+        display: none; /* Esconde a navegação padrão */
+    }
+
+    .hamburger {
+        display: block; /* Exibe o ícone do menu hambúrguer */
+    }
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card .descricacao {
+    padding: 25px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 1.8em;
+    color: #388E3C;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Seção de Contato */
+.contact {
+    padding: 2%;
+    background-color: #0093E0;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact button {
+    padding: 12px;
+    background-color: #0039AB;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #1111a2;
+    transform: scale(1.01);
+    box-shadow: 0px 0px 2px #262AE0;
+}
+
+/* Rodapé */
+footer {
+    background-color: #8F00E0;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .social-links {
+    margin: 10px 0;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: #4CAF50;
+}
