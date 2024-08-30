@@ -9,6 +9,46 @@ body {
     line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#rastreamento {
+    background-color: #8F00E0;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #262AE0, #0039AB);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
 /* Estilos para o menu hambúrguer */
 .hamburger {
     display: none;
@@ -34,8 +74,8 @@ body {
     right: 0;
     width: 250px;
     height: 100%;
-    background: #0093E0;
-    padding: 100px 20px;
+    background: linear-gradient(to left, #0093E0, #54bcf4);
+    padding: 50px 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     z-index: 1000;
@@ -72,42 +112,6 @@ body {
     color: white;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: 700;
-    color: #222;
-}
-
-a {
-    text-decoration: none;
-    color: blue;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Cabeçalho */
-header {
-    background: linear-gradient(to right, #262AE0, #0039AB);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin-top: 5px;
-    font-size: 1.2em;
-    color: #e0e0e0;
-}
-
 /* Navegação */
 nav {
     display: flex;
@@ -132,13 +136,8 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-nav #rastreamento {
-    background-color: #8F00E0;
-}
-
 /* Container Principal */
 .container {
-    /* max-width: 1200px;*/
     margin: 0 auto;
 }
 
@@ -147,6 +146,7 @@ nav #rastreamento {
     text-align: center;
     padding: 150px 20px;
     background: url('images/showcase.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     color: white;
     margin-top: 0;
 }
@@ -159,12 +159,109 @@ nav #rastreamento {
     font-size: 1.5em;
 }
 
+/* sobre */
 .about {
     padding: 2%;
 }
 
 .about h2 {
     text-align: center;
+    font-size: 2em;
+}
+
+/* servicos */
+.servics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5%;
+}
+
+.servics .serv {
+    background-color: #0093E0;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 6px;
+}
+
+.servics .serv p, .servics .serv h2 {
+    text-align: center;
+}
+
+.servics .serv p {
+    margin: 0 4px 15px 4px;
+}
+
+#servics h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* tecnologias */
+.tecnologias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5%;
+}
+
+.tecnologias .tech {
+    margin: 25px 6px;
+}
+
+.tecnologias .tech h2 {
+    text-align: center;
+}
+
+.tecnologias .tech .barra {
+    background-color: #6e6b6b2b;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.barra .cor {
+    background: linear-gradient(to right, #1695d9, #0039AB);
+    position: absolute;
+    height: 20px;
+}
+
+#html {
+    width: 90%;
+}
+
+#css {
+    width: 70%;
+}
+
+#javascript {
+    width: 40%;
+}
+
+#wordpress {
+    width: 5%;
+}
+
+#react {
+    width: 2%;
+}
+
+#tecnologes {
+    background-color: #bfe0f2;
+    padding: 40px ;
+}
+
+#tecnologes h1 {
+    text-align: center;
+    font-size: 2.2em;
+}
+
+.tecnologias .tech div {
+    text-align: center;
+}
+
+.tecnologias .tech img{
+    width: 95px;
 }
 
 /* Seções */
@@ -173,7 +270,7 @@ section {
 }
 
 .projects {
-    background-color: #8F00E0;
+    background: linear-gradient(to right, #262AE0, #1695d9);
 }
 
 .projects-section h2 {
@@ -195,6 +292,16 @@ section {
     }
 }
 
+@media (max-width: 1024px) {
+    nav {
+        display: none; 
+    }
+
+    .hamburger {
+        display: block; 
+    }
+}
+
 @media (max-width: 1024px) and (min-width: 750px) {
     .projects {
         grid-template-columns: 1fr;
@@ -208,6 +315,14 @@ section {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .servics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -227,12 +342,13 @@ section {
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    nav {
-        display: none; /* Esconde a navegação padrão */
+    .servics {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 10%;
     }
 
-    .hamburger {
-        display: block; /* Exibe o ícone do menu hambúrguer */
+    .tecnologias {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -252,7 +368,6 @@ section {
 .card img {
     max-width: 100%;
     border-radius: 8px;
-    margin-bottom: 15px;
 }
 
 .card .descricacao {
@@ -262,7 +377,7 @@ section {
 .card h3 {
     margin-top: 15px;
     font-size: 1.8em;
-    color: #388E3C;
+    color: #1111a2;
 }
 
 .card p {
@@ -342,5 +457,5 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: #4CAF50;
+    color: #0039AB;
 }
