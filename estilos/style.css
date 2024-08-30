@@ -118,6 +118,7 @@ nav {
     justify-content: center;
     background: #0093E0;
     padding: 10px 0;
+    margin-bottom: 0px;
 }
 
 nav a {
@@ -145,7 +146,7 @@ nav a:hover {
 .home {
     text-align: center;
     padding: 150px 20px;
-    background: url('images/showcase.jpg') no-repeat center center/cover;
+    background: url('../images/showcase.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     color: white;
     margin-top: 0;
@@ -162,14 +163,37 @@ nav a:hover {
 /* sobre */
 .about {
     padding: 2%;
+    background-color: #8e00e0a6;
 }
 
 .about h2 {
     text-align: center;
     font-size: 2em;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.about #abouttesxt1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about #abouttesxt1 p, .about #abouttext2 p {
+    padding: 0 15px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.about #abouttesxt1 img {
+    width: 100%;
 }
 
 /* servicos */
+#servics {
+    background-color: #bfe0f2;
+}
+
 .servics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -194,13 +218,15 @@ nav a:hover {
 #servics h1 {
     text-align: center;
     font-size: 2.5em;
+    margin-top: 0px;
+    padding: 40px;
 }
 
 /* tecnologias */
 .tecnologias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 5%;
+    padding: 0 4%;
 }
 
 .tecnologias .tech {
@@ -264,12 +290,8 @@ nav a:hover {
     width: 95px;
 }
 
-/* Seções */
-section {
-    margin: 50px 0;
-}
-
-.projects {
+/* projetos */
+.projects-section {
     background: linear-gradient(to right, #262AE0, #1695d9);
 }
 
@@ -277,79 +299,14 @@ section {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5em;
+    margin-top: 0px;
+    padding: 30px;
 }
 
 .projects {
     display: grid;
     gap: 20px;
     padding: 2%;
-}
-
-/* Responsividade das colunas */
-@media (min-width: 1024px) {
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 1024px) {
-    nav {
-        display: none; 
-    }
-
-    .hamburger {
-        display: block; 
-    }
-}
-
-@media (max-width: 1024px) and (min-width: 750px) {
-    .projects {
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        background: white;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .servics {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tecnologias {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 750px)  {
-    .projects {
-        grid-template-columns: 1fr;
-        padding: 4%;
-    }
-
-    .card {
-        background: white;
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .servics {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 0 10%;
-    }
-
-    .tecnologias {
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
 
 .card {
@@ -362,11 +319,11 @@ section {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.338);
 }
 
 .card img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 8px;
 }
 

@@ -1,0 +1,73 @@
+/* Responsividade das colunas */
+@media (min-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .servics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        display: none; 
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    .about #abouttesxt1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .about #abouttesxt1 img {
+        display: none;
+    }
+}
+
+@media (max-width: 750px)  {
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 4%;
+    }
+
+    .card {
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .servics {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 10%;
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
