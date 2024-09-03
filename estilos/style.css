@@ -9,11 +9,17 @@ body {
     line-height: 1.6;
 }
 
+
 h1,
 h2,
 h3 {
     font-weight: 700;
     color: #222;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.2em;
 }
 
 a {
@@ -47,6 +53,13 @@ header p {
     margin-top: 5px;
     font-size: 1.2em;
     color: #e0e0e0;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Estilos para o menu hambúrguer */
@@ -119,6 +132,7 @@ nav {
     background: #0093E0;
     padding: 10px 0;
     margin-bottom: 0px;
+    border-bottom: 2px solid black;
 }
 
 nav a {
@@ -145,11 +159,14 @@ nav a:hover {
 /* Estilos da Home */
 .home {
     text-align: center;
-    padding: 150px 20px;
-    background: url('../images/showcase.jpg') no-repeat center center/cover;
+    background: url('../images/backgrounder.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     color: white;
     margin-top: 0;
+}
+
+.home #bem-vindo {
+    padding: 165px 0;
 }
 
 .home h2 {
@@ -163,12 +180,11 @@ nav a:hover {
 /* sobre */
 .about {
     padding: 2%;
+    padding-top: 70px;
     background-color: #8e00e0a6;
 }
 
-.about h2 {
-    text-align: center;
-    font-size: 2em;
+.about h1 {
     margin-top: 0px;
     margin-bottom: 40px;
 }
@@ -176,6 +192,11 @@ nav a:hover {
 .about #abouttesxt1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.about #abouttesxt1 #text {
+    align-content: center;
+    justify-content: center;
 }
 
 .about #abouttesxt1 p, .about #abouttext2 p {
@@ -191,6 +212,7 @@ nav a:hover {
 
 /* servicos */
 #servics {
+    padding-top: 30px;
     background-color: #bfe0f2;
 }
 
@@ -216,8 +238,6 @@ nav a:hover {
 }
 
 #servics h1 {
-    text-align: center;
-    font-size: 2.5em;
     margin-top: 0px;
     padding: 40px;
 }
@@ -230,7 +250,7 @@ nav a:hover {
 }
 
 .tecnologias .tech {
-    margin: 25px 6px;
+    margin: 25px 10px;
 }
 
 .tecnologias .tech h2 {
@@ -277,11 +297,6 @@ nav a:hover {
     padding: 40px ;
 }
 
-#tecnologes h1 {
-    text-align: center;
-    font-size: 2.2em;
-}
-
 .tecnologias .tech div {
     text-align: center;
 }
@@ -291,14 +306,16 @@ nav a:hover {
 }
 
 /* projetos */
+#projects {
+    padding-top: 43px;
+}
+
 .projects-section {
     background: linear-gradient(to right, #262AE0, #1695d9);
 }
 
-.projects-section h2 {
-    text-align: center;
+.projects-section h1 {
     margin-bottom: 30px;
-    font-size: 2.5em;
     margin-top: 0px;
     padding: 30px;
 }
@@ -329,6 +346,8 @@ nav a:hover {
 
 .card .descricacao {
     padding: 25px;
+    align-content: center;
+    justify-content: center;
 }
 
 .card h3 {
@@ -346,17 +365,18 @@ nav a:hover {
 .contact {
     padding: 2%;
     background-color: #0093E0;
+    padding-top: 40px;
+    padding-bottom: 70px;
 }
 
-.contact h2 {
-    text-align: center;
-    font-size: 1.6em;
+.contact h1 {
+    padding-bottom: 30px;
 }
 
 .contact form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -367,6 +387,30 @@ nav a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
+    outline: none;
+}
+
+.contact .formFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact .formFlex div h3 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.contact .formFlex div input {
+    display: inline-block;
+}
+
+.contact .formFlex label {
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 400;
 }
 
 .contact button {
@@ -395,7 +439,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 40px;
 }
 
 footer p {
