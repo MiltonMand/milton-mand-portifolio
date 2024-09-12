@@ -32,6 +32,25 @@ ul {
     padding: 0;
 }
 
+.button {
+    background-color: #0039AB;
+    padding: 8px 35px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #ffffffb7;
+    font-size: 1em;
+}
+
+.button:hover {
+    background-color: #1111a2;
+}
+
+div.center {
+    text-align: center;
+}
+
 #rastreamento {
     background-color: #8F00E0;
 }
@@ -136,7 +155,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffffc0;
     padding: 10px 20px;
     margin: 0 20px;
     text-decoration: none;
@@ -148,6 +167,8 @@ nav a {
 
 nav a:hover {
     background-color: #04276e2f;
+    color: white;
+    box-shadow: 0px 0px 10px #0000004f;
     transform: scale(1.05);
 }
 
@@ -331,12 +352,12 @@ nav a:hover {
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.5s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.338);
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 7, 86, 0.776);
 }
 
 .card img {
@@ -390,8 +411,13 @@ nav a:hover {
     outline: none;
 }
 
-.contact .formFlex {
+.formFlex {
     display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.contact {
     flex-direction: row;
     justify-content: space-between;
 }
