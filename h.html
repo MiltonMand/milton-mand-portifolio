@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progresso do Projeto e Chat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            gap: 20px;
+        }
+
+        .progress-section,
+        .chat-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-section {
+            flex: 2;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .image-carousel img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .arrows button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .image-description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .chat-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-header img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            max-width: 70%;
+            border-radius: 20px;
+            word-wrap: break-word;
+        }
+
+        .message.client {
+            background-color: #e1f7d5;
+            align-self: flex-start;
+            border-top-left-radius: 0;
+        }
+
+        .message.you {
+            background-color: #daf8fe;
+            align-self: flex-end;
+            border-top-right-radius: 0;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .progress-section,
+            .chat-section {
+                width: 100%;
+            }
+
+            .chat-messages {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Área de Progresso -->
+        <div class="progress-section">
+            <div class="image-carousel">
+                <img id="progressImage" src="https://via.placeholder.com/300" alt="Imagem do Progresso">
+                <div class="arrows">
+                    <button id="prevBtn">&lt;</button>
+                    <button id="nextBtn">&gt;</button>
+                </div>
+                <div class="image-description" id="imageDescription">
+                    Progresso 1: Estrutura básica criada.
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Chat -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/50" alt="Avatar do Cliente">
+                <p>Cliente: Nome do Cliente</p>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message client">Olá! Como está o progresso?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+                <input type="file" id="imageInput" accept="image/*">
+                <button id="sendBtn">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carrossel de Imagens
+        const images = [
+            {
+                src: 'assets/images/projeto1.png',
+                description: 'Progresso 1: Estrutura básica criada. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet neque ab ducimus enim eius earum quam tempora repellendus, dolorem similique ratione error suscipit ipsam. Velit qui porro dolorem excepturi.'
+            },
+            {
+                src: 'assets/images/projeto2.png',
+                description: 'Progresso 2: Layout ajustado. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet neque ab ducimus enim eius earum quam tempora repellendus, dolorem similique ratione error suscipit ipsam. Velit qui porro dolorem excepturi.'
+            },
+            {
+                src: 'assets/images/projeto3.png',
+                description: 'Progresso 3: Estilos adicionados. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet neque ab ducimus enim eius earum quam tempora repellendus, dolorem similique ratione error suscipit ipsam. Velit qui porro dolorem excepturi.'
+            }
+        ];
+
+        let currentImageIndex = 0;
+
+        sendBtn.addEventListener('click', () => {
+            const messageText = chatInput.value.trim();
+            const imageFile = document.getElementById('imageInput').files[0];
+
+            const formData = new FormData();
+            if (messageText) {
+                formData.append('message', messageText);
+            }
+            if (imageFile) {
+                formData.append('image', imageFile);
+            }
+
+            // Enviar para o servidor (exemplo com fetch)
+            fetch('/api/sendMessage', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Adicionar a mensagem ou imagem ao chat
+                        if (data.message) {
+                            const newMessage = document.createElement('div');
+                            newMessage.classList.add('message', 'you');
+                            newMessage.textContent = data.message;
+                            chatMessages.appendChild(newMessage);
+                        }
+                        if (data.imageUrl) {
+                            const newImage = document.createElement('img');
+                            newImage.src = data.imageUrl;
+                            newImage.classList.add('message-image');
+                            chatMessages.appendChild(newImage);
+                        }
+                        chatInput.value = '';
+                        document.getElementById('imageInput').value = '';
+                    }
+                });
+        });
+
+
+        const progressImage = document.getElementById('progressImage');
+        const imageDescription = document.getElementById('imageDescription');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateImage() {
+            progressImage.src = images[currentImageIndex].src;
+            imageDescription.textContent = images[currentImageIndex].description;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateImage();
+        });
+
+        updateImage();
+
+        // Chat Simples
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        sendBtn.addEventListener('click', () => {
+            const messageText = chatInput.value.trim();
+            if (messageText !== '') {
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'you');
+                newMessage.textContent = messageText;
+                chatMessages.appendChild(newMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Rolagem automática para a última mensagem
+                chatInput.value = ''; // Limpa o campo de entrada
+            }
+        });
+    </script>
+</body>
+
+</html>

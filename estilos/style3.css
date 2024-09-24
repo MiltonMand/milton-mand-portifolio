@@ -4,17 +4,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #32116a05;
+    background-color: #f4f4f4; /* Fundo cinza claro */
     color: #333;
     line-height: 1.6;
 }
 
-
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-weight: 700;
-    color: #222;
+    color: #222; /* Títulos com cor mais escura */
 }
 
 h1 {
@@ -24,7 +21,7 @@ h1 {
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #1d4f91; /* Azul escuro para links */
 }
 
 ul {
@@ -33,32 +30,28 @@ ul {
 }
 
 .button {
-    background-color: #0039AB;
+    background-color: #1d4f91; /* Azul escuro para botões */
     padding: 8px 35px;
     cursor: pointer;
     border: none;
     border-radius: 10px;
     font-weight: bold;
-    color: #ffffffb7;
+    color: white;
     font-size: 1em;
 }
 
 .button:hover {
-    background-color: #1111a2;
+    background-color: #163d73; /* Cor mais escura ao passar o mouse */
 }
 
 div.center {
     text-align: center;
 }
 
-#rastreamento {
-    background-color: #8F00E0;
-}
-
 /* Cabeçalho */
 header {
-    background: linear-gradient(to right, #262AE0, #0039AB);
-    color: #fff;
+    background: linear-gradient(to right, #333, #555); /* Gradiente de cinza */
+    color: white;
     padding: 20px 0;
     text-align: center;
 }
@@ -87,11 +80,6 @@ header h1 {
     right: 20px;
 }
 
-.hamburger:hover {
-    transform: scale(1.05);
-    color: white;
-}
-
 .menu {
     display: none;
     flex-direction: column;
@@ -101,7 +89,7 @@ header h1 {
     right: 0;
     width: 250px;
     height: 100%;
-    background: linear-gradient(to left, #0093E0, #54bcf4);
+    background: linear-gradient(to left, #333, #444); /* Cores escuras */
     padding: 50px 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
@@ -113,14 +101,13 @@ header h1 {
     font-size: 20px;
     margin: 10px 0;
     padding: 10px;
-    text-decoration: none;
     text-align: center;
     width: 100%;
     border-radius: 10px;
 }
 
 .menu a:hover {
-    background-color: #04276e2f;
+    background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
 }
 
@@ -134,39 +121,25 @@ header h1 {
     left: 25px;
 }
 
-.close:hover {
-    transform: scale(1.05);
-    color: white;
-}
-
 /* Navegação */
 nav {
     display: flex;
     justify-content: center;
-    background: #0093E0;
+    background: #1d4f91; /* Azul escuro para navegação */
     padding: 10px 0;
-    margin-bottom: 0px;
 }
 
 nav a {
-    color: #ffffffc0;
+    color: white;
     padding: 10px 20px;
     margin: 0 20px;
     text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s;
     border-radius: 10px;
-    transition: .1s;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    color: white;
-    transform: scale(1.05);
-}
-
-/* Container Principal */
-.container {
-    margin: 0 auto;
+    background-color: #163d73; /* Azul mais escuro ao passar o mouse */
 }
 
 /* Estilos da Home */
@@ -174,143 +147,84 @@ nav a:hover {
     text-align: center;
     background: url('../assets/images/backgrounder.jpg') no-repeat center center/cover;
     background-attachment: fixed;
-    color: white;
-    margin-top: 0;
+    position: relative;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente escuro */
+    backdrop-filter: blur(5px); /* Desfoque aplicado */
+    z-index: 1;
 }
 
 .home #bem-vindo {
     padding: 165px 0;
+    position: relative;
+    z-index: 2; /* Garante que o texto esteja acima do fundo desfocado */
 }
 
 .home h2 {
     font-size: 3em;
+    color: white;
 }
 
 .home p {
     font-size: 1.5em;
+    color: white;
 }
 
 /* sobre */
 .about {
     padding: 2%;
     padding-top: 70px;
-    background-color: #078183df;
+    background-color: #333; /* Cinza escuro */
 }
 
 .about h1 {
     margin-top: 0px;
     margin-bottom: 40px;
-}
-
-.about #abouttesxt1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.about #abouttesxt1 #text {
-    align-content: center;
-    justify-content: center;
-}
-
-.about #abouttesxt1 p,
-.about #abouttext2 p {
-    padding: 0 15px;
     color: white;
-    justify-content: center;
-    align-items: center;
 }
 
-.about #abouttesxt1 img {
+.about #abouttesxt1 p {
+    color: white;
+}
+
+.about img {
     width: 100%;
+    height: auto;
 }
 
-/* servicos */
+/* serviços */
 #servics {
-    padding-top: 30px;
-    background-color: #bfe0f2;
-}
-
-.servics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 5%;
+    padding: 30px 0;
+    background-color: #f8f9fa; /* Cinza claro */
 }
 
 .servics .serv {
-    /*background-color: #0093E0;*/
-    background: linear-gradient(to left, #00afe0c7, #0450e89e);
+    background: linear-gradient(to left, #1d4f91, #163d73); /* Azul escuro */
     border-radius: 10px;
-    border: 1px solid black;
     margin: 6px;
 }
 
-.servics .serv p,
-.servics .serv h2 {
+.servics .serv p, .servics .serv h2 {
     text-align: center;
-}
-
-.servics .serv p {
-    margin: 0 4px 15px 4px;
-}
-
-#servics h1 {
-    margin-top: 0px;
-    padding: 40px;
+    color: white;
 }
 
 /* tecnologias */
-.tecnologias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 4%;
-}
-
-.tecnologias .tech {
-    margin: 25px 10px;
+.tecnologias .barra .cor {
+    background: linear-gradient(to right, #1d4f91, #163d73); /* Azul escuro */
 }
 
 .tecnologias .tech h2 {
     text-align: center;
-}
-
-.tecnologias .tech .barra {
-    background-color: #6e6b6b2b;
-    display: block;
-    position: relative;
-    border-radius: 20px;
-    height: 20px;
-    overflow: hidden;
-}
-
-.barra .cor {
-    background: linear-gradient(to right, #1695d9, #0039AB);
-    position: absolute;
-    height: 20px;
-}
-
-#html {
-    width: 90%;
-}
-
-#css {
-    width: 70%;
-}
-
-#javascript {
-    width: 40%;
-}
-
-#wordpress {
-    width: 5%;
-}
-
-#react {
-    width: 35%;
-}
-
-#tecnologes {
-    background-color: #bfe0f2;
-    padding: 40px;
+    color: #333; /* Cinza escuro */
 }
 
 .tecnologias .tech div {
@@ -327,7 +241,7 @@ nav a:hover {
 }
 
 .projects-section {
-    background: rgb(6, 107, 151);
+    background: #064779; /* Azul bem escuro */
 }
 
 .projects-section h1 {
@@ -370,7 +284,7 @@ nav a:hover {
 .card h3 {
     margin-top: 15px;
     font-size: 1.8em;
-    color: #1111a2;
+    color: #1d4f91; /* Azul escuro */
 }
 
 .card p {
@@ -381,13 +295,12 @@ nav a:hover {
 /* Seção de Contato */
 .contact {
     padding: 2%;
-    background-color: #0093E0;
-    padding-top: 40px;
-    padding-bottom: 70px;
+    background-color: #1d4f91; /* Azul escuro */
 }
 
 .contact h1 {
     padding-bottom: 30px;
+    color: white;
 }
 
 .contact form {
@@ -407,28 +320,15 @@ nav a:hover {
     outline: none;
 }
 
-.contact {
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.half-width {
-    width: 300px;
-    margin-right: 2%;
-}
-
-.half-width:last-of-type {
-    margin-right: 0;
+.contact textarea {
+    resize: none;
+    min-height: 125px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .contact button {
     padding: 12px;
-    background-color: #0039AB;
+    background-color: #163d73; /* Botão de contato azul escuro */
     color: white;
     border: none;
     border-radius: 4px;
@@ -437,56 +337,22 @@ nav a:hover {
     transition: background-color 0.3s;
 }
 
-.contact textarea {
-    resize: none;
-    min-height: 125px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .contact button:hover {
-    background-color: #1111a2;
-    transform: scale(1.001);
-    box-shadow: 0px 0px 2px #262AE0;
+    background-color: #0f2a51; /* Azul mais escuro */
 }
 
 /* Rodapé */
 footer {
-    background-color: #8F00E0;
+    background-color: #333; /* Cinza escuro */
     color: white;
     padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    text-align: center;
 }
 
-footer .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-footer .footer-grid #pages {
-    padding: 0 30px;
-}
-
-footer .footer-grid #pages a {
+footer a {
     color: white;
-}
-
-footer #pages {
-    color: white;
-}
-
-footer .social-links {
-    margin: 10px 0;
-}
-
-footer .social-links a {
-    margin: 0 10px;
-    color: white;
-    font-size: 1.5em;
-    transition: color 0.3s;
 }
 
 footer .social-links a:hover {
-    color: #0039AB;
+    color: #1d4f91; /* Azul escuro ao passar o mouse */
 }
