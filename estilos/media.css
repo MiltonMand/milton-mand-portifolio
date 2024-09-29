@@ -7,6 +7,7 @@
 
 @media (max-width: 1024px) {
     header {
+        background-color: rgb(89, 90, 90);
         position: fixed;
         top: 0;
         right: 0;
@@ -21,7 +22,6 @@
     }
 
     .card {
-        background: white;
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 20px;
@@ -63,13 +63,8 @@
     }
 
     .card {
-        background: white;
         display: grid;
         grid-template-columns: 1fr;
-        padding: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .servics {

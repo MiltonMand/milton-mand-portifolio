@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4; /* Fundo cinza claro */
-    color: #333;
+    background-color: #f4f4f4; 
+    color: #02215f;
     line-height: 1.6;
 }
 
@@ -50,7 +50,7 @@ div.center {
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(to right, #333, #555); /* Gradiente de cinza */
+    background: linear-gradient(to right, #052466, #033f88f9); /* Gradiente de cinza */
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -125,7 +125,7 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    background: #1d4f91; /* Azul escuro para navegação */
+    background: #174075; /* Azul escuro para navegação */
     padding: 10px 0;
 }
 
@@ -136,6 +136,10 @@ nav a {
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s;
+}
+
+#rastreamento {
+    background-color: #8F00E0;
 }
 
 nav a:hover {
@@ -191,8 +195,17 @@ nav a:hover {
     color: white;
 }
 
-.about #abouttesxt1 p {
+.about #abouttesxt1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about #abouttesxt1 p,
+.about #abouttext2 p {
+    padding: 0 15px;
     color: white;
+    justify-content: center;
+    align-items: center;
 }
 
 .about img {
@@ -206,10 +219,22 @@ nav a:hover {
     background-color: #f8f9fa; /* Cinza claro */
 }
 
+#servics h1 {
+    margin-top: 0px;
+    padding: 40px;
+}
+
+.servics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5%;
+}
+
 .servics .serv {
     background: linear-gradient(to left, #1d4f91, #163d73); /* Azul escuro */
     border-radius: 10px;
     margin: 6px;
+    padding: 10px;
 }
 
 .servics .serv p, .servics .serv h2 {
@@ -218,8 +243,19 @@ nav a:hover {
 }
 
 /* tecnologias */
-.tecnologias .barra .cor {
-    background: linear-gradient(to right, #1d4f91, #163d73); /* Azul escuro */
+.tecnologias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 4%;
+}
+
+#tecnologes {
+    background-color: #bfe0f2;
+    padding: 40px;
+}
+
+.tecnologias .tech {
+    margin: 25px 10px;
 }
 
 .tecnologias .tech h2 {
@@ -233,6 +269,41 @@ nav a:hover {
 
 .tecnologias .tech img {
     width: 95px;
+}
+
+.tecnologias .tech .barra {
+    background-color: #6e6b6b2b;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.tecnologias .barra .cor {
+    background: linear-gradient(to right, #1d4f91, #163d73); /* Azul escuro */
+    position: absolute;
+    height: 20px;
+}
+
+#html {
+    width: 90%;
+}
+
+#css {
+    width: 70%;
+}
+
+#javascript {
+    width: 40%;
+}
+
+#wordpress {
+    width: 5%;
+}
+
+#react {
+    width: 35%;
 }
 
 /* projetos */
@@ -258,7 +329,7 @@ nav a:hover {
 }
 
 .card {
-    background: white;
+    background: rgba(171, 171, 171, 0.966);
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -284,7 +355,7 @@ nav a:hover {
 .card h3 {
     margin-top: 15px;
     font-size: 1.8em;
-    color: #1d4f91; /* Azul escuro */
+    color: #1d4f91;
 }
 
 .card p {
@@ -346,13 +417,43 @@ footer {
     background-color: #333; /* Cinza escuro */
     color: white;
     padding: 20px 0;
-    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer .footer-grid #pages {
+    padding: 0 30px;
+}
+
+footer .footer-grid #pages a {
+    color: white;
 }
 
 footer a {
     color: white;
 }
 
+footer #pages {
+    color: white;
+}
+
+footer .social-links {
+    margin: 10px 0;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
 footer .social-links a:hover {
-    color: #1d4f91; /* Azul escuro ao passar o mouse */
+    color: #0039AB;
 }

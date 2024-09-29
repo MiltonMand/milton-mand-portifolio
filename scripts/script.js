@@ -34,6 +34,15 @@ window.onscroll = function () {
     }
 };
 
+//modal
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "flex";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
 //contact
 const phoneInputField = document.querySelector("#phone");
 const phoneInput = window.intlTelInput(phoneInputField, {

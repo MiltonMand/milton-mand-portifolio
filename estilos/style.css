@@ -9,6 +9,14 @@ body {
     line-height: 1.6;
 }
 
+input, textarea {
+    background-color: #817f7f65;
+    color: white;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ffffff7b;
+}
 
 h1,
 h2,
@@ -51,13 +59,21 @@ div.center {
     text-align: center;
 }
 
-#rastreamento {
-    background-color: #8F00E0;
+.rastreamento {
+    background-color: rgb(5, 51, 75);
+    border-radius: 20px 2px;
+    border: 1.5px solid #8b8888d9;
+    transition: .2s;
+}
+
+.rastreamento:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 5px #000000c1;
 }
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(to right, #262AE0, #0039AB);
+    background: #212121ec;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -69,11 +85,12 @@ header h1 {
 }
 
 .fixed {
+    background: #3c3c3c;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.66);
+    border-bottom: 2px solid rgba(117, 116, 116, 0.66);
 }
 
 /* Estilos para o menu hambúrguer */
@@ -83,7 +100,7 @@ header h1 {
     cursor: pointer;
     color: #ffffffb9;
     position: absolute;
-    top: 20px;
+    top: 13px;
     right: 20px;
 }
 
@@ -101,7 +118,7 @@ header h1 {
     right: 0;
     width: 250px;
     height: 100%;
-    background: linear-gradient(to left, #0093E0, #54bcf4);
+    background: linear-gradient(to left, #828384, #8f8e8e);
     padding: 50px 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
@@ -143,7 +160,7 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    background: #0093E0;
+    background: #3c3c3cec;
     padding: 10px 0;
     margin-bottom: 0px;
 }
@@ -174,16 +191,31 @@ nav a:hover {
     text-align: center;
     background: url('../assets/images/backgrounder.jpg') no-repeat center center/cover;
     background-attachment: fixed;
-    color: white;
-    margin-top: 0;
+    position: relative;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
 }
 
 .home #bem-vindo {
     padding: 165px 0;
+    position: relative;
+    color: white;
+    z-index: 2;
 }
 
 .home h2 {
     font-size: 3em;
+    color: white;
 }
 
 .home p {
@@ -194,7 +226,7 @@ nav a:hover {
 .about {
     padding: 2%;
     padding-top: 70px;
-    background-color: #078183df;
+    background-color: #faf7f7dd;
 }
 
 .about h1 {
@@ -215,7 +247,7 @@ nav a:hover {
 .about #abouttesxt1 p,
 .about #abouttext2 p {
     padding: 0 15px;
-    color: white;
+    color: black;
     justify-content: center;
     align-items: center;
 }
@@ -226,8 +258,8 @@ nav a:hover {
 
 /* servicos */
 #servics {
-    padding-top: 30px;
-    background-color: #bfe0f2;
+    padding: 30px 0 30px 0;
+    background-color: #c1bfbf78;
 }
 
 .servics {
@@ -237,11 +269,15 @@ nav a:hover {
 }
 
 .servics .serv {
-    /*background-color: #0093E0;*/
-    background: linear-gradient(to left, #00afe0c7, #0450e89e);
-    border-radius: 10px;
-    border: 1px solid black;
+    background-color: #00000049;
+    border-radius: 5px 40px ;
+    border: 2px solid #0000004c;
     margin: 6px;
+    transition: .3s;
+}
+
+.servics .serv:hover {
+    transform: scale(1.02);
 }
 
 .servics .serv p,
@@ -253,72 +289,27 @@ nav a:hover {
     margin: 0 4px 15px 4px;
 }
 
+.servics .serv .tech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 7px;
+}
+
+.servics .serv .tech i {
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 1.7em;
+    color: #ffffffb2;
+    background-color: rgba(0, 0, 0, 0.605);
+}
+
 #servics h1 {
     margin-top: 0px;
-    padding: 40px;
-}
-
-/* tecnologias */
-.tecnologias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 4%;
-}
-
-.tecnologias .tech {
-    margin: 25px 10px;
-}
-
-.tecnologias .tech h2 {
-    text-align: center;
-}
-
-.tecnologias .tech .barra {
-    background-color: #6e6b6b2b;
-    display: block;
-    position: relative;
-    border-radius: 20px;
-    height: 20px;
-    overflow: hidden;
-}
-
-.barra .cor {
-    background: linear-gradient(to right, #1695d9, #0039AB);
-    position: absolute;
-    height: 20px;
-}
-
-#html {
-    width: 90%;
-}
-
-#css {
-    width: 70%;
-}
-
-#javascript {
-    width: 40%;
-}
-
-#wordpress {
-    width: 5%;
-}
-
-#react {
-    width: 35%;
-}
-
-#tecnologes {
-    background-color: #bfe0f2;
-    padding: 40px;
-}
-
-.tecnologias .tech div {
-    text-align: center;
-}
-
-.tecnologias .tech img {
-    width: 95px;
+    padding-top: 40px;
 }
 
 /* projetos */
@@ -327,7 +318,7 @@ nav a:hover {
 }
 
 .projects-section {
-    background: rgb(6, 107, 151);
+    background: rgb(5, 44, 61);
 }
 
 .projects-section h1 {
@@ -344,16 +335,16 @@ nav a:hover {
 }
 
 .card {
-    background: white;
+    background: #b4b3b3;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px #0000001a;
     border-radius: 8px;
     transition: 0.5s;
 }
 
 .card:hover {
     transform: scale(1.01);
-    box-shadow: 0 0 20px rgba(0, 7, 86, 0.776);
+    box-shadow: 0 0 20px #000756c6;
 }
 
 .card img {
@@ -367,10 +358,25 @@ nav a:hover {
     justify-content: center;
 }
 
+.card .descricacao .center button {
+    background-color: #042a3a;
+    border: 2px solid rgba(243, 243, 243, 0.767);
+    border-radius: 10px;
+    color: rgb(220, 215, 215);
+    padding: 7px 35px;
+    transition: .2s;
+}
+
+.card .descricacao .center button:hover {
+    transform: scale(1.02);
+    color: white;
+    background-color: #053b53;
+}
+
 .card h3 {
     margin-top: 15px;
     font-size: 1.8em;
-    color: #1111a2;
+    color: #050506;
 }
 
 .card p {
@@ -378,16 +384,54 @@ nav a:hover {
     color: #555;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
 /* Seção de Contato */
 .contact {
     padding: 2%;
-    background-color: #0093E0;
+    background: #3c3c3cec;
     padding-top: 40px;
     padding-bottom: 70px;
 }
 
 .contact h1 {
     padding-bottom: 30px;
+    color: white;
 }
 
 .contact form {
@@ -428,13 +472,19 @@ nav a:hover {
 
 .contact button {
     padding: 12px;
-    background-color: #0039AB;
-    color: white;
+    background-color: #171818ed;
+    color: #ffffffcf;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    transform: scale(1.001);
+    background-color: #171818d4;
+    color: rgba(255, 255, 255, 0.936);
 }
 
 .contact textarea {
@@ -443,15 +493,9 @@ nav a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contact button:hover {
-    background-color: #1111a2;
-    transform: scale(1.001);
-    box-shadow: 0px 0px 2px #262AE0;
-}
-
 /* Rodapé */
 footer {
-    background-color: #8F00E0;
+    background-color: #052534;
     color: white;
     padding: 20px 0;
     position: relative;
@@ -472,6 +516,11 @@ footer .footer-grid #pages a {
     color: white;
 }
 
+footer .footer-grid #pages a.rastreamento {
+    padding: 10px;
+    margin-top: 5px;
+}
+
 footer #pages {
     color: white;
 }
@@ -485,6 +534,16 @@ footer .social-links a {
     color: white;
     font-size: 1.5em;
     transition: color 0.3s;
+}
+
+footer p {
+    margin-left: 25px;
+}
+
+footer h2 {
+    color: white;
+    margin: 0;
+    font-size: 2em;
 }
 
 footer .social-links a:hover {
